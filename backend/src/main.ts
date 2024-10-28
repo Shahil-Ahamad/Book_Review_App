@@ -2,8 +2,8 @@ import express, { Request, Response, NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { env } from "./utils/config";
-import { APIError } from "./utils/error";
 import { createDBConnection } from "./utils/db";
+import { APIError } from "./utils/error";
 
 
 createDBConnection()
