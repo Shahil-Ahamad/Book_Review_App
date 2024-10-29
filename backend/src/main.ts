@@ -4,6 +4,7 @@ import cors from "cors";
 import { env } from "./utils/config";
 import { createDBConnection } from "./utils/db";
 import { APIError } from "./utils/error";
+import { authRouter } from "./modules/auth/router";
 
 
 createDBConnection()
@@ -32,6 +33,10 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
         isSuccess: true,
     });;
 })
+
+//Validation
+
+app.use("/api/auth",authRouter)
 
 //Global Error Handler
 
